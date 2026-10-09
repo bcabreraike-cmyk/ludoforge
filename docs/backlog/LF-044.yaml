@@ -1,0 +1,16 @@
+id: LF-044
+title: Placeholder for LF-044
+depends_on: []
+type: feature
+stage: concept
+area: TBD
+role: TBD
+priority: P1
+acceptance:
+  - id: A1
+    text: Placeholder acceptance criteria
+    check: '{kind: test, ref: TBD}'
+budget: {tokens: 100000, minutes: 60}
+reviewer_role: technical-director
+status: done
+history: []

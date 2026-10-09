@@ -1,0 +1,15 @@
+scenario: sample-test
+engine: any
+seed: 1234
+setup:
+  - load_scene: levels/test_flat
+steps:
+  - press: {action: jump, hold_ms: 400}
+  - wait: {ms: 800}
+  - assert: {expr: "player.max_height_tiles >= 4.4 and player.max_height_tiles <= 4.6"}
+  - screenshot: jump_peak
+  - press: {action: jump, hold_ms: 60}
+  - wait: {ms: 800}
+  - assert: {expr: "player.max_height_tiles >= 2.3 and player.max_height_tiles <= 2.7"}
+teardown: [quit]
+tags: [movimiento, T-0142]

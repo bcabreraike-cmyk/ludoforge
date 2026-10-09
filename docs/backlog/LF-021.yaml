@@ -1,0 +1,22 @@
+id: LF-021
+title: Addon `ludo_test`: `LudoTest` + `Telemetry` (§14.2, §6.11)
+depends_on: [LF-020]
+type: feature
+stage: concept
+area: testing
+role: qa-lead
+priority: P1
+acceptance:
+  - id: A1
+    text: Se crea el addon `ludo_test` para Godot 4 con las clases LudoTest y Telemetry
+    check: {kind: check, ref: packages/adapters/godot-4/addons/ludo_test/}
+  - id: A2
+    text: LudoTest proporciona métodos para simular entrada y aserciones
+    check: {kind: test, ref: packages/adapters/godot-4/addons/ludo_test/test/ludo_test.test.ts}
+  - id: A3
+    text: Telemetry emite eventos JSONL a archivos en builds/telemetry/
+    check: {kind: test, ref: packages/adapters/godot-4/addons/ludo_test/test/telemetry.test.ts}
+budget: {tokens: 600000, minutes: 360}
+reviewer_role: technical-director
+status: done
+history: []

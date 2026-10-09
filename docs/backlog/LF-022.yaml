@@ -1,0 +1,25 @@
+id: LF-022
+title: Runner de escenarios (`ludo test`, `verify`, `capture`) con reportes JSON/MD
+depends_on: [LF-021]
+type: feature
+stage: concept
+area: testing
+role: qa-lead
+priority: P1
+acceptance:
+  - id: A1
+    text: Se implementa el comando `ludo test` para ejecutar escenarios de prueba
+    check: {kind: check, ref: packages/cli/src/commands/test/index.ts}
+  - id: A2
+    text: Se implementa el comando `ludo verify` para verificar tareas
+    check: {kind: check, ref: packages/cli/src/commands/verify/index.ts}
+  - id: A3
+    text: Se implementa el comando `ludo capture` para capturar evidencia
+    check: {kind: check, ref: packages/cli/src/commands/capture/index.ts}
+  - id: A4
+    text: Los reportes se generan en formato JSON y Markdown
+    check: {kind: check, ref: packages/testing/src/}
+budget: {tokens: 700000, minutes: 420}
+reviewer_role: technical-director
+status: done
+history: 
