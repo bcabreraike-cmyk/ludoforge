@@ -1,0 +1,25 @@
+id: LF-020
+title: Adaptador Godot: detect/scaffold/run/build en modo headless; versión fijada (ADR)
+depends_on: [LF-012]
+type: feature
+stage: concept
+area: adapters
+role: engine-programmer
+priority: P1
+acceptance:
+  - id: A1
+    text: Se crea un ADR que fija la versión de Godot 4 a utilizar (ej. 4.2.1)
+    check: {kind: check, ref: docs/adr/0006-godot-4-version.md}
+  - id: A2
+    text: Se implementa el adaptador de Godot 4 con las funciones detect, scaffold, run, build
+    check: {kind: check, ref: packages/adapters/godot-4/src/index.ts}
+  - id: A3
+    text: El adaptador puede detectar si Godot 4 está instalado
+    check: {kind: test, ref: packages/adapters/godot-4/test/detect.test.ts}
+  - id: A4
+    text: El adaptador puede crear un proyecto Godot básico desde una spec mínima
+    check: {kind: test, ref: packages/adapters/godot-4/test/scaffold.test.ts}
+budget: {tokens: 800000, minutes: 480}
+reviewer_role: technical-director
+status: done
+history: []

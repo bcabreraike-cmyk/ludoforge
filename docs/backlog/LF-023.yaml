@@ -1,0 +1,22 @@
+id: LF-023
+title: Módulos 2D base (cada uno con contrato + escenario): `input-actions` (done), `run-jump-2d` (done), `camera-2d-follow` (done), `tilemap` (done), `hud-basic` (done), `pause-menu` (done), `save-load` (done), `checkpoints` (done), `stomp-enemy` (done), `collectibles` (done)
+depends_on: [LF-022]
+type: feature
+stage: concept
+area: modules
+role: engine-programmer
+priority: P1
+acceptance:
+  - id: A1
+    text: Cada módulo tiene un contrato definido
+    check: {kind: check, ref: packages/modules/*/contract.md}
+  - id: A2
+    text: Cada módulo tiene al menos un escenario de prueba
+    check: {kind: check, ref: packages/modules/*/tests/*.yaml}
+  - id: A3
+    text: Cada módulo tiene una implementación para al menos un adaptador (Godot 4)
+    check: {kind: check, ref: packages/modules/*/impl/godot-4/}
+budget: {tokens: 2000000, minutes: 1200}
+reviewer_role: technical-director
+status: done
+history: 

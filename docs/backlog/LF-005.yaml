@@ -31,5 +31,5 @@ acceptance:
 
 budget: budget: {tokens: 400000, minutes: 240}
 reviewer_role: technical-director  # nunca el mismo que implementa
-status: backlog  # backlog→ready→in_progress→in_review→verified→done
+status: done
 history: []

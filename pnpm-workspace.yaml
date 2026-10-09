@@ -1,0 +1,15 @@
+packages:
+  - packages/*
+  - hosts/*
+  - adapters/*
+  - python/*
+  - roles/*
+  - skills/*
+  - blueprints/*
+  - modules/*
+  - style-packs/*
+  - templates/*
+  - examples/*
+  - bench/*
+  - docs/*
+  - tools/*

@@ -1,0 +1,16 @@
+id: LF-040
+title: Servidor MCP con las herramientas de §5.6 + pruebas de contrato
+depends_on: [LF-023]
+type: feature
+stage: concept
+area: mcp-server
+role: engine-programmer
+priority: P1
+acceptance:
+  - id: A1
+    text: Todas las herramientas MCP devuelven el formato {ok,data,error,evidence}
+    check: {kind: test, ref: packages/mcp-server/test/tools.test.ts}
+budget: {tokens: 1000000, minutes: 600}
+reviewer_role: technical-director
+status: done
+history: []
