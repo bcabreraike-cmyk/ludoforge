@@ -1,0 +1,30 @@
+{
+  "name": "ludoforge",
+  "version": "0.0.0-inicial",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "hosts/*",
+    "adapters/*",
+    "python/*",
+    "roles/*",
+    "skills/*",
+    "blueprints/*",
+    "modules/*",
+    "style-packs/*",
+    "templates/*",
+    "examples/*",
+    "bench/*",
+    "docs/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "lint": "echo \"Lint: no lint script yet\" && exit 0",
+    "type-check": "echo \"Type check: no type-check script yet\" && exit 0",
+    "test": "echo \"Test: no test script yet\" && exit 0",
+    "smoke": "node .github/workflows/smoke-test.js"
+  },
+  "devDependencies": {
+    "pnpm": "^9.0.0"
+  }
+}
