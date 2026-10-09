@@ -1,0 +1,26 @@
+---
+schema_version: 1
+id: LF-001
+title: Monorepo base (pnpm workspaces, TypeScript estricto, lint, formato, Vitest, CI, escaneo de secretos)
+type: chore  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: infraestructura
+role: build-devops  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: []
+blocks: []
+inputs: []
+outputs: ["CI verde en cada push", "plantilla de PR"]
+acceptance:
+  - id: A1
+    text: CI verde en cada push
+    check: {kind: check, ref: workflow.yml}
+  - id: A2
+    text: Plantilla de PR disponible
+    check: {kind: check, ref: PULL_REQUEST_TEMPLATE.md}
+
+budget: budget: {tokens: 50000, minutes: 30}
+reviewer_role: technical-director  # nunca el mismo que implementa
+status: done  # backlog→ready→in_progress→in_review→verified→done
+history: []

@@ -1,0 +1,38 @@
+---
+schema_version: 1
+id: LF-009
+title: Preguntas y decisiones: ask/answer/decide, persistencia, plantilla de lote
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: comunicación
+role: interviewer  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-003]
+blocks: []
+inputs: []
+outputs: ["Flujo completo con respuestas rápidas (Q-1 A, default, decide tú)"]
+acceptance:
+  - id: A1
+    text: Comandos ludo ask list/show/answer/defer funcionan
+    check: {kind: check, ref: packages/cli/src/commands/ask/}
+  - id: A2
+    text: Comando ludo answer funciona para responder preguntas
+    check: {kind: check, ref: packages/cli/src/commands/ask/}
+  - id: A3
+    text: Comandos ludo decide new/list funcionan
+    check: {kind: check, ref: packages/cli/src/commands/decide/}
+  - id: A4
+    text: Persistencia de preguntas y decisiones en archivos
+    check: {kind: check, ref: .ludoforge/questions/ y .ludoforge/decisions/}
+  - id: A5
+    text: Plantilla de lote de preguntas funciona
+    check: {kind: check, ref: packages/cli/src/commands/ask/}
+  - id: A6
+    text: Respuestas rápidas funcionan (Q-1 A, Q-2 default, etc.)
+    check: {kind: check, ref: packages/cli/src/commands/ask/}
+
+budget: budget: {tokens: 300000, minutes: 180}
+reviewer_role: ceo-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

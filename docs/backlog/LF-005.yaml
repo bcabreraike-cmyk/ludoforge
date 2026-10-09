@@ -1,0 +1,35 @@
+---
+schema_version: 1
+id: LF-005
+title: ludo init + adaptador de host genérico (AGENTS.md con marcadores, --dry-run, --uninstall)
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: hosts
+role: engine-programmer  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-004]
+blocks: []
+inputs: []
+outputs: ["Idempotente; no pisa archivos del usuario"]
+acceptance:
+  - id: A1
+    text: ludo init instala skills, tarjetas de rol y AGENTS.md
+    check: {kind: check, ref: packages/cli/src/commands/init.ts}
+  - id: A2
+    text: ludo init registra servidor MCP
+    check: {kind: check, ref: packages/mcp-server/src/}
+  - id: A3
+    text: ludo init crea ~/.ludoforge/config.yaml
+    check: {kind: check, ref: packages/cli/src/commands/init.ts}
+  - id: A4
+    text: ludo init --dry-run no modifica archivos
+    check: {kind: check, ref: packages/cli/src/commands/init.ts}
+  - id: A5
+    text: ludo init --uninstall elimina instalación limpiamente
+    check: {kind: check, ref: packages/cli/src/commands/init.ts}
+
+budget: budget: {tokens: 400000, minutes: 240}
+reviewer_role: technical-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

@@ -1,0 +1,44 @@
+---
+schema_version: 1
+id: LF-007
+title: Scope Governor v0 (§4.2, tier final, MVP recortado, veredicto)
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: scope
+role: producer  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-003]
+blocks: []
+inputs: []
+outputs: ["Pruebas por tabla de los 5 ejemplos de §15"]
+acceptance:
+  - id: A1
+    text: Scope Governor calcula puntaje correctamente
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A2
+    text: Determina tier final correctamente (mayor entre puntaje y tier base)
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A3
+    text: Calcula tamaño de equipo estimado
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A4
+    text: Calcula presupuesto estimado (tokens, créditos, minutos)
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A5
+    text: Genera MVP recortado (regla del 20%)
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A6
+    text: Identifica riesgos principales y supuestos
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A7
+    text: Genera plan de etapas con versiones objetivo
+    check: {kind: check, ref: packages/core/src/scope/}
+  - id: A8
+    text: Veredicto correcto (ok, ok_con_recorte, requiere_replantear)
+    check: {kind: check, ref: packages/core/src/scope/}
+
+budget: budget: {tokens: 400000, minutes: 240}
+reviewer_role: ceo-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

@@ -1,0 +1,32 @@
+---
+schema_version: 1
+id: LF-012
+title: ludo status, generador de STATUS.md, bitácora runs/, ludo budget básico
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: estado
+role: ceo-director  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-008, LF-009, LF-011]
+blocks: []
+inputs: []
+outputs: ["Estado coherente tras operaciones"]
+acceptance:
+  - id: A1
+    text: ludo status muestra estado actual del proyecto
+    check: {kind: check, ref: packages/cli/src/commands/status.ts}
+  - id: A2
+    text: Genera y actualiza docs/STATUS.md correctamente
+    check: {kind: check, ref: packages/cli/src/commands/status.ts}
+  - id: A3
+    text: Mantiene bitácora de sesiones en docs/runs/
+    check: {kind: check, ref: packages/cli/src/commands/status.ts}
+  - id: A4
+    text: ludo budget básico muestra consumo vs. topes
+    check: {kind: check, ref: packages/cli/src/commands/budget.ts}
+
+budget: budget: {tokens: 200000, minutes: 120}
+reviewer_role: producer  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

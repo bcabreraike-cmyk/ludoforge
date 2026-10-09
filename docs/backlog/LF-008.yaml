@@ -1,0 +1,32 @@
+---
+schema_version: 1
+id: LF-008
+title: Tablero: ludo tasks + máquina de estados + lint de dependencias/ciclos + grafo
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: tablero
+role: engine-programmer  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-003]
+blocks: []
+inputs: []
+outputs: ["Transiciones inválidas rechazadas; ciclos detectados"]
+acceptance:
+  - id: A1
+    text: Comando ludo tasks funciona (list, add, take, update, lint, graph)
+    check: {kind: check, ref: packages/cli/src/commands/tasks/}
+  - id: A2
+    text: Máquina de estados implementada correctamente
+    check: {kind: check, ref: packages/core/src/task/}
+  - id: A3
+    text: Lint de dependencias detecta ciclos y dependencias inválidas
+    check: {kind: check, ref: packages/core/src/task/}
+  - id: A4
+    text: Genera grafo de dependencias
+    check: {kind: check, ref: packages/core/src/task/}
+
+budget: budget: {tokens: 350000, minutes: 210}
+reviewer_role: technical-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

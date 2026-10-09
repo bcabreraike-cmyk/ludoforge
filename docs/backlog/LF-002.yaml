@@ -1,0 +1,35 @@
+---
+schema_version: 1
+id: LF-002
+title: ADR 0001–0005: resumen inicial, stack, licencia provisional, motor principal, estrategia de hosts
+type: chore  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: arquitectura
+role: technical-director  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-001]
+blocks: []
+inputs: []
+outputs: ["5 ADR con contexto/alternativas/decisión"]
+acceptance:
+  - id: A1
+    text: ADR 0001 escrito
+    check: {kind: check, ref: docs/adr/0001-*.md}
+  - id: A2
+    text: ADR 0002 escrito
+    check: {kind: check, ref: docs/adr/0002-*.md}
+  - id: A3
+    text: ADR 0003 escrito
+    check: {kind: check, ref: docs/adr/0003-*.md}
+  - id: A4
+    text: ADR 0004 escrito
+    check: {kind: check, ref: docs/adr/0004-*.md}
+  - id: A5
+    text: ADR 0005 escrito
+    check: {kind: check, ref: docs/adr/0005-*.md}
+
+budget: budget: {tokens: 200000, minutes: 120}
+reviewer_role: ceo-director  # nunca el mismo que implementa
+status: done
+history: []

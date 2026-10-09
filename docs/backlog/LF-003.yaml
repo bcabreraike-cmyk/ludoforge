@@ -1,0 +1,29 @@
+---
+schema_version: 1
+id: LF-003
+title: core: esquemas (project, game spec, task, question, decision, gate, asset manifest, role card, module manifest, blueprint) con schema_version, JSON Schema exportado, fixtures válidos/inválidos
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: esquemas
+role: engine-programmer  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-001]
+blocks: []
+inputs: []
+outputs: ["100 % de fixtures se validan/rechazan como se espera"]
+acceptance:
+  - id: A1
+    text: Todos los esquemas definidos con schema_version
+    check: {kind: check, ref: packages/core/src/schemas/}
+  - id: A2
+    text: JSON Schema exportado para todos los esquemas
+    check: {kind: check, ref: packages/core/src/schemas/*.json}
+  - id: A3
+    text: Fixtures válidos e inválidos para cada esquema
+    check: {kind: check, ref: packages/core/tests/schemas/}
+
+budget: budget: {tokens: 500000, minutes: 300}
+reviewer_role: technical-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

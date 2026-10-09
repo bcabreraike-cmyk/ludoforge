@@ -1,0 +1,29 @@
+---
+schema_version: 1
+id: LF-010
+title: Tarjetas de rol v0 (8): ceo-director, producer, game-designer-lead, level-designer, gameplay-programmer, artist-2d, qa-lead, integrator + ludo roles lint
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: roles
+role: game-designer-lead  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-003]
+blocks: []
+inputs: []
+outputs: ["Lint verde; 3 evals por rol redactados"]
+acceptance:
+  - id: A1
+    text: Se crean las 8 tarjetas de rol iniciales
+    check: {kind: check, ref: roles/}
+  - id: A2
+    text: ludo roles lint pasa sin errores
+    check: {kind: check, ref: packages/cli/src/commands/roles/}
+  - id: A3
+    text: Cada rol tiene al menos 3 escenarios de evaluación en evals/
+    check: {kind: check, ref: roles/*/evals/}
+
+budget: budget: {tokens: 400000, minutes: 240}
+reviewer_role: ceo-director  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []

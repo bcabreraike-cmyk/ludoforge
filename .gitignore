@@ -1,0 +1,45 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.lerna/
+# Build outputs
+dist/
+build/
+.libs/
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+# OS
+.DS_Store
+Thumbs.db
+# Logs
+logs
+*.log
+# Environment
+.env
+.env.*
+# Hermes specific (if any)
+.hermes/
+# Cache
+.cache/
+# Temporary
+*.tmp
+*.temp
+# pnpm
+.pnpm-debug.log*
+# Godot
+.import/
+.godot/
+# Godot export templates
+export_presets.cfg
+# Godot mono (if any)
+mono/
+# Godot .mono
+# Godot .import

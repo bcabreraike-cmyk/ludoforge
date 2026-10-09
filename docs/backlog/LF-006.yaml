@@ -1,0 +1,35 @@
+---
+schema_version: 1
+id: LF-006
+title: ludo new: entrevista interactiva y --from brief.yaml; crea .ludoforge/, spec inicial y scope report
+type: feature  # feature|bug|asset|design|research|chore|gate
+stage: concept  # concept|prototype|vertical_slice|alpha|beta|rc|gold|live
+area: orquestación
+role: ceo-director  # rol asignado (o tipo de rol)
+assignee: null  # instancia concreta cuando se toma
+priority: P1  # P0 bloqueante … P3
+depends_on: [LF-003, LF-004, LF-005]
+blocks: []
+inputs: []
+outputs: ["Genera proyecto válido; spec pasa validación"]
+acceptance:
+  - id: A1
+    text: ludo new ejecuta entrevista interactiva
+    check: {kind: check, ref: packages/cli/src/commands/new.ts}
+  - id: A2
+    text: ludo new --from brief.yaml funciona correctamente
+    check: {kind: check, ref: packages/cli/src/commands/new.ts}
+  - id: A3
+    text: Crea directorio .ludoforge/ con estructura correcta
+    check: {kind: check, ref: packages/cli/src/commands/new.ts}
+  - id: A4
+    text: Genera spec inicial válida
+    check: {kind: check, ref: packages/cli/src/commands/new.ts}
+  - id: A5
+    text: Genera scope report preciso
+    check: {kind: check, ref: packages/cli/src/commands/new.ts}
+
+budget: budget: {tokens: 600000, minutes: 360}
+reviewer_role: producer  # nunca el mismo que implementa
+status: backlog  # backlog→ready→in_progress→in_review→verified→done
+history: []
